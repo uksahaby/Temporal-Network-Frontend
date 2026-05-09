@@ -1,0 +1,10 @@
+node_modules
+.next
+.git
+.vscode
+*.md
+.env.local
+.env.development
+.env.test
+.uploads
+tmp
