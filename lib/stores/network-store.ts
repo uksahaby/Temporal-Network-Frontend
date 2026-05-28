@@ -827,7 +827,9 @@ export const useNetworkStore = create<NetworkStore>((set, get) => ({
 // ============================================================================
 export const useFetchCommunityData = (
   taskId: string | null,
-  baseUrl: string = "http://localhost:8000/api",
+  baseUrl: string = process.env.NEXT_PUBLIC_API_URL
+    ? `${process.env.NEXT_PUBLIC_API_URL}/api`
+    : "http://localhost:8000/api",
 ) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
